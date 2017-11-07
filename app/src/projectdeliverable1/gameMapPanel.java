@@ -35,13 +35,6 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     public gameMapPanel() {
         super();
         setLayout(null);
-        /*ImageIcon originalSize = new ImageIcon("images/map.png");
-        ImageIcon newSize = new ImageIcon(((originalSize).getImage()).getScaledInstance(2000, 1000, java.awt.Image.SCALE_SMOOTH));
-  
-        map = new JButton();
-        map.setBounds(0,0,2000,1000);
-        //add(map);
-        map.setIcon(newSize);*/
         
         pmans = new JButton("PMans");
         phyrst = new JButton("Phyrst");
@@ -65,6 +58,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         madMex.setBounds(100,400,100,100);
         den.setBounds(300,400,100,100);
         cafe.setBounds(900,600,100,100);
+        player.setBounds(1100,850,75,75);
         
         add(pmans);
         add(phyrst);
@@ -72,6 +66,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         add(madMex);
         add(den);
         add(cafe);
+        add(player);
     }
 
    
@@ -83,12 +78,12 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
 
     @Override
     public void keyTyped(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override

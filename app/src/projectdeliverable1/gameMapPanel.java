@@ -52,12 +52,12 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         cafe.addActionListener(this);
         player.addActionListener(this);
         
-        pmans.setBounds(1800,400,100,100);
-        phyrst.setBounds(900,400,100,100);
+        pmans.setBounds(1450,450,100,100);
+        phyrst.setBounds(700,500,100,100);
         champs.setBounds(700,400,100,100);
-        madMex.setBounds(100,400,100,100);
-        den.setBounds(300,400,100,100);
-        cafe.setBounds(900,600,100,100);
+        madMex.setBounds(800,850,100,100);
+        den.setBounds(1650,200,100,100);
+        cafe.setBounds(150,150,100,100);
         player.setBounds(1100,850,75,75);
         
         add(pmans);

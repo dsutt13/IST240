@@ -26,8 +26,14 @@ public class initialPanel extends JPanel implements ActionListener {
     
     ImageIcon originalSize = new ImageIcon("images/map.jpg");
     ImageIcon newSize = new ImageIcon(((originalSize).getImage()).getScaledInstance(2000, 1000, java.awt.Image.SCALE_SMOOTH));
+    ImageIcon harry = new ImageIcon("images/harry.jpg");
+    ImageIcon harry1 = new ImageIcon(((harry).getImage()).getScaledInstance(75, 75, java.awt.Image.SCALE_SMOOTH));
+    ImageIcon kingSnow = new ImageIcon("images/jon.jpg");
+    ImageIcon kingSnow1 = new ImageIcon(((kingSnow).getImage()).getScaledInstance(75, 75, java.awt.Image.SCALE_SMOOTH));
+    ImageIcon myers = new ImageIcon("images/myers.jpg");
+    ImageIcon myers1 = new ImageIcon(((myers).getImage()).getScaledInstance(75, 75, java.awt.Image.SCALE_SMOOTH));
     
-    
+
 
     public initialPanel() {
         //super();
@@ -102,18 +108,21 @@ public class initialPanel extends JPanel implements ActionListener {
             add(map);
             validate();
             repaint();
+            map.player.setIcon(harry1);
         }
         if(obj == scp.character2) {
             remove(scp);
             add(map);
             validate();
             repaint();
+            map.player.setIcon(kingSnow1);
         }
-        if(obj == scp.character3) {
+        if(obj == scp.character3) { 
             remove(scp);
             add(map);
             validate();
             repaint();
+            map.player.setIcon(myers1);
         }
     }
 

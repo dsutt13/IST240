@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author dsutt13
+ * @author dsutt13  
  */
 public class gameDesigners extends JPanel {
 

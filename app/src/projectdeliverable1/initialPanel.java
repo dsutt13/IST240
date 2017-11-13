@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author sjo5124
+ * @author sjo5124 
  */
 public class initialPanel extends JPanel implements ActionListener {
 

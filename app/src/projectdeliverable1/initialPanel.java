@@ -24,7 +24,7 @@ public class initialPanel extends JPanel implements ActionListener {
     gameMapPanel map;
     gameDesigners ds;
     difficultyPanel dp;
-    phyrst phyrst;
+    //phyrst phyrst;
     
     ImageIcon originalSize = new ImageIcon("images/map.jpg");
     ImageIcon newSize = new ImageIcon(((originalSize).getImage()).getScaledInstance(2000, 1000, java.awt.Image.SCALE_SMOOTH));
@@ -45,7 +45,7 @@ public class initialPanel extends JPanel implements ActionListener {
         map = new gameMapPanel();
         ds = new gameDesigners();
         dp = new difficultyPanel();
-        phyrst = new phyrst();
+        //phyrst = new phyrst();
 
         setLayout(new GridLayout(1, 1));
         add(mjp);
@@ -62,7 +62,7 @@ public class initialPanel extends JPanel implements ActionListener {
         dp.easy.addActionListener(this);
         dp.medium.addActionListener(this);
         dp.hard.addActionListener(this);
-        map.phyrst.addActionListener(this);
+        //map.phyrst.addActionListener(this);
 
     }
 
@@ -152,15 +152,7 @@ public class initialPanel extends JPanel implements ActionListener {
             validate();
             repaint();
         }
-        
-        //test
-        /*if(map.player.Intersects(map.phyrst)){
-        } else {
-            remove(map);
-            add(phyrst);
-            validate();
-            repaint();
-        }*/
+
     }
 
 

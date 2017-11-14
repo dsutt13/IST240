@@ -8,6 +8,7 @@ package projectdeliverable1;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,12 +25,15 @@ import javax.swing.JPanel;
 public class gameMapPanel extends JPanel implements ActionListener, KeyListener {
 
     JButton map, pmans, phyrst, champs, madMex, den, cafe, player;
-
+        int x = 1100;
+        int y = 850;
      public void paintComponent(Graphics g) {
         
         super.paintComponent(g);
+        requestFocusInWindow();
         Image img = Toolkit.getDefaultToolkit().getImage("images/map.png");
         g.drawImage(img,0,0,2000,1000,this);   
+     
     }
     
     public gameMapPanel() {
@@ -58,7 +62,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         madMex.setBounds(800,850,100,100);
         den.setBounds(1650,200,100,100);
         cafe.setBounds(150,150,100,100);
-        player.setBounds(1100,850,75,75);
+        player.setBounds(x,y,75,75);
         
         add(pmans);
         add(phyrst);
@@ -67,6 +71,9 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         add(den);
         add(cafe);
         add(player);
+        
+        setFocusable(true);
+        addKeyListener(this);
     }
 
    
@@ -82,8 +89,26 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     }
 
     @Override
-    public void keyPressed(KeyEvent ke) {
-        
+    public void keyPressed(KeyEvent evt) {
+        System.out.println("Key pressed");
+        int kk = evt.getKeyCode();
+        if (kk == evt.VK_LEFT)
+        {
+            x = x - 10;
+        }
+        if (kk == evt.VK_RIGHT)
+        {
+            x = x + 10;
+        }
+        if (kk == evt.VK_UP)
+        {
+            y = y - 10;
+        }
+        if (kk == evt.VK_DOWN)
+        {
+            y = y + 10;
+        }
+        player.setBounds(new Rectangle(x, y, 75, 75));
     }
 
     @Override

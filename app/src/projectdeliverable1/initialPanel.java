@@ -23,6 +23,8 @@ public class initialPanel extends JPanel implements ActionListener {
     selectcharacterPanel scp;
     gameMapPanel map;
     gameDesigners ds;
+    difficultyPanel dp;
+    phyrst phyrst;
     
     ImageIcon originalSize = new ImageIcon("images/map.jpg");
     ImageIcon newSize = new ImageIcon(((originalSize).getImage()).getScaledInstance(2000, 1000, java.awt.Image.SCALE_SMOOTH));
@@ -42,6 +44,8 @@ public class initialPanel extends JPanel implements ActionListener {
         scp = new selectcharacterPanel();
         map = new gameMapPanel();
         ds = new gameDesigners();
+        dp = new difficultyPanel();
+        phyrst = new phyrst();
 
         setLayout(new GridLayout(1, 1));
         add(mjp);
@@ -55,6 +59,10 @@ public class initialPanel extends JPanel implements ActionListener {
         scp.character1.addActionListener(this);
         scp.character2.addActionListener(this);
         scp.character3.addActionListener(this);
+        dp.easy.addActionListener(this);
+        dp.medium.addActionListener(this);
+        dp.hard.addActionListener(this);
+        map.phyrst.addActionListener(this);
 
     }
 
@@ -105,24 +113,53 @@ public class initialPanel extends JPanel implements ActionListener {
         //click a character
         if(obj == scp.character1) {
             remove(scp);
-            add(map);
+            add(dp);
             validate();
             repaint();
             map.player.setIcon(harry1);
         }
         if(obj == scp.character2) {
             remove(scp);
-            add(map);
+            add(dp);
             validate();
             repaint();
             map.player.setIcon(kingSnow1);
         }
         if(obj == scp.character3) { 
             remove(scp);
-            add(map);
+            add(dp);
             validate();
             repaint();
             map.player.setIcon(myers1);
+        }
+        
+        //selecting difficulty
+        if(obj == dp.easy) { 
+            remove(dp);
+            add(map);
+            validate();
+            repaint();
+        }
+        if(obj == dp.medium) { 
+            remove(dp);
+            add(map);
+            validate();
+            repaint();
+        }
+        if(obj == dp.hard) { 
+            remove(dp);
+            add(map);
+            validate();
+            repaint();
+        }
+        
+        //test
+        if(map.player.Intersects(map.phyrst)){
+        } else {
+            remove(map);
+            add(phyrst);
+            validate();
+            repaint();
         }
     }
 

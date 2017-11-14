@@ -154,13 +154,13 @@ public class initialPanel extends JPanel implements ActionListener {
         }
         
         //test
-        if(map.player.Intersects(map.phyrst)){
+        /*if(map.player.Intersects(map.phyrst)){
         } else {
             remove(map);
             add(phyrst);
             validate();
             repaint();
-        }
+        }*/
     }
 
 

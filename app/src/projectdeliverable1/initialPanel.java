@@ -7,9 +7,11 @@ package projectdeliverable1;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -18,6 +20,9 @@ import javax.swing.JPanel;
  */
 public class initialPanel extends JPanel implements ActionListener {
 
+    
+    
+    
     myJPanelstd mjp;
     instructionsPanel ip;
     selectcharacterPanel scp;
@@ -25,6 +30,13 @@ public class initialPanel extends JPanel implements ActionListener {
     gameDesigners ds;
     difficultyPanel dp;
     //phyrst phyrst;
+    JButton player;
+    
+    pmansPanel pmansGame;
+    phyrstPanel phyrstGame;
+    
+        
+        
     
     ImageIcon originalSize = new ImageIcon("images/map.jpg");
     ImageIcon newSize = new ImageIcon(((originalSize).getImage()).getScaledInstance(2000, 1000, java.awt.Image.SCALE_SMOOTH));
@@ -46,6 +58,9 @@ public class initialPanel extends JPanel implements ActionListener {
         ds = new gameDesigners();
         dp = new difficultyPanel();
         //phyrst = new phyrst();
+        pmansGame = new pmansPanel();
+        phyrstGame = new phyrstPanel();
+        
 
         setLayout(new GridLayout(1, 1));
         add(mjp);

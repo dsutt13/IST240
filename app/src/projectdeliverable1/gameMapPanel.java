@@ -24,11 +24,14 @@ import javax.swing.JPanel;
  */
 public class gameMapPanel extends JPanel implements ActionListener, KeyListener {
 
-    JButton map, pmans, phyrst, champs, madMex, den, cafe, player;
+    JButton pmans, phyrst, champs, madMex, den, cafe, player;
     int x = 1100;
     int y = 850;
     pmansPanel pmansGame;
     phyrstPanel phyrstGame;
+    initialPanel initial;
+
+
 
     public void paintComponent(Graphics g) {
 
@@ -39,7 +42,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
 
     }
     
-    public void intersect() {
+   public void intersect() {
         
         Rectangle r1 = new Rectangle(1450, 450, 100, 100);//pmans
         Rectangle r2 = new Rectangle(700, 500, 100, 100);//phyrst
@@ -47,20 +50,21 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         Rectangle r4 = new Rectangle(800, 850, 100, 100);//madMex
         Rectangle r5 = new Rectangle(1650, 200, 100, 100);//den
         Rectangle r6 = new Rectangle(150, 150, 100, 100);//cafe
-        Rectangle play = player.getBounds();
+        Rectangle play = player.getBounds();//player
         
         if (play.intersects(r1)) {
-            System.out.println("Fuck");
-            remove(map);
+            //System.out.println("congratz");
+            remove(initial.map);
             add(pmansGame);
             validate();
             repaint();
         }
     }
 
-    public gameMapPanel() {
+    public gameMapPanel(/*initialPanel a*/) {
         super();
         setLayout(null);
+        //initial = a;
         
         //intersect();
 

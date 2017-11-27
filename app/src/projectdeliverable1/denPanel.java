@@ -58,7 +58,7 @@ public class denPanel extends JPanel implements ActionListener {
             initial.add(initial.map);
             initial.validate();
             initial.repaint();
-
+            
         }
     }
     

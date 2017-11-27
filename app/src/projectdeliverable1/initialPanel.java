@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JPanel; 
+import javax.swing.JPanel;
 
 /**
  *
@@ -29,12 +29,15 @@ public class initialPanel extends JPanel implements ActionListener {
     gameMapPanel map;
     gameDesigners ds;
     difficultyPanel dp;
-    //phyrst phyrst;
+    
     JButton player;
     
     pmansPanel pmansGame;
     phyrstPanel phyrstGame;
-    
+    cafePanel cafeGame;
+    mexPanel mexGame;
+    champsPanel champsGame;
+    denPanel denGame;
         
         
     
@@ -54,13 +57,16 @@ public class initialPanel extends JPanel implements ActionListener {
         mjp = new myJPanelstd();
         ip = new instructionsPanel();
         scp = new selectcharacterPanel();
-        map = new gameMapPanel();
+        map = new gameMapPanel(this);
         ds = new gameDesigners();
         dp = new difficultyPanel();
-        //phyrst = new phyrst();
+
         pmansGame = new pmansPanel();
         phyrstGame = new phyrstPanel();
-        
+        cafeGame = new cafePanel();
+        mexGame = new mexPanel();
+        champsGame = new champsPanel();
+        denGame = new denPanel();
 
         setLayout(new GridLayout(1, 1));
         add(mjp);

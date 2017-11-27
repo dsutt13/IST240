@@ -6,16 +6,20 @@
 package projectdeliverable1;
 
 import java.awt.Color;
+import java.awt.MenuComponent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel; 
 import javax.swing.JTextArea;
 import javax.swing.Timer;
 
+
 /**
  *
  * @author dsutt13
  */
-class pmansPanel extends JPanel{
+class pmansPanel extends JPanel implements ActionListener {
     
     JButton welcome;
     
@@ -23,7 +27,11 @@ class pmansPanel extends JPanel{
     JTextArea message = new JTextArea("Time: ");
     int limit = 0;
     int delay = 0;
-    int i = 45;
+    int i = 6;
+    initialPanel initial;
+    gameMapPanel map;
+    
+    
     
     public pmansPanel() {
         super();
@@ -35,14 +43,29 @@ class pmansPanel extends JPanel{
         add(welcome);
         
         add(message);
-        message.setBounds(0,20,150,150);
-        message.setText("Time: " + i);
+        message.setBounds(0,0,100,50);
+        
         delay = 1000;
-        i=i-1;
-        //tim = new Timer(delay, this);
-        
-        
-        
+        tim = new Timer(delay, this);
+             
     }
+ 
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        Object obj = ae.getSource();
+        if(obj == tim) {
+           i = i-1;
+           message.setText("Time: " + i);   
+        }
+        
+        if(i == 0) {
+              initial.remove(initial.pmansGame);
+              initial.add(initial.map);
+              initial.validate();
+              initial.repaint();
+            
+            }
+        
+        }
 
 }

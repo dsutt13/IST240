@@ -32,7 +32,7 @@ public class mexPanel extends JPanel implements ActionListener {
     public mexPanel(initialPanel a) {
         super();
         setLayout(null);
-        setBackground(Color.orange);
+        setBackground(Color.cyan);
         initial = a;
         
         welcome = new JButton("Welcome to Mad Mex");

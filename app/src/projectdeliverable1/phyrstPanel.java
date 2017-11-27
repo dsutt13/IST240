@@ -28,10 +28,11 @@ class phyrstPanel extends JPanel implements ActionListener {
     initialPanel initial;
     gameMapPanel map;
     
-    public phyrstPanel() {
+    public phyrstPanel(initialPanel a) {
         super();
         setLayout(null);
         setBackground(Color.orange);
+        initial = a;
         
         welcome = new JButton("Welcome to the Phyrst!");
         welcome.setBounds(1000,0,200,200);
@@ -42,7 +43,6 @@ class phyrstPanel extends JPanel implements ActionListener {
 
         delay = 1000;
         tim = new Timer(delay, this);
-
         
     }
 

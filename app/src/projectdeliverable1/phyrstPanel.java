@@ -55,7 +55,6 @@ class phyrstPanel extends JPanel implements ActionListener {
         }
 
         if (i == 0) {
-            //System.out.println("hi");
             initial.remove(initial.phyrstGame);
             initial.add(initial.map);
             initial.validate();

@@ -62,11 +62,11 @@ public class initialPanel extends JPanel implements ActionListener {
         dp = new difficultyPanel();
 
         pmansGame = new pmansPanel(this);
-        phyrstGame = new phyrstPanel();
-        cafeGame = new cafePanel();
-        mexGame = new mexPanel();
-        champsGame = new champsPanel();
-        denGame = new denPanel();
+        phyrstGame = new phyrstPanel(this);
+        cafeGame = new cafePanel(this);
+        mexGame = new mexPanel(this);
+        champsGame = new champsPanel(this);
+        denGame = new denPanel(this);
 
         setLayout(new GridLayout(1, 1));
         add(mjp);

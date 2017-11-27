@@ -64,30 +64,35 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
             initial.add(initial.phyrstGame);
             initial.validate();
             initial.repaint();
+            initial.phyrstGame.tim.start();
         }
         if (play.intersects(r3)) {
             initial.remove(initial.map);
             initial.add(initial.champsGame);
             initial.validate();
             initial.repaint();
+            initial.champsGame.tim.start();
         }
         if (play.intersects(r4)) {
             initial.remove(initial.map);
             initial.add(initial.mexGame);
             initial.validate();
             initial.repaint();
+            initial.mexGame.tim.start();
         }
         if (play.intersects(r5)) {
             initial.remove(initial.map);
             initial.add(initial.denGame);
             initial.validate();
             initial.repaint();
+            initial.denGame.tim.start();
         }
         if (play.intersects(r6)) {
             initial.remove(initial.map);
             initial.add(initial.cafeGame);
             initial.validate();
             initial.repaint();
+            initial.cafeGame.tim.start();
         }
     }
 

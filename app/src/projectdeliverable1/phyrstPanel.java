@@ -31,7 +31,7 @@ class phyrstPanel extends JPanel implements ActionListener {
     public phyrstPanel(initialPanel a) {
         super();
         setLayout(null);
-        setBackground(Color.orange);
+        setBackground(Color.black);
         initial = a;
         
         welcome = new JButton("Welcome to the Phyrst!");

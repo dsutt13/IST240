@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package projectdeliverable1;
-
+ 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -27,8 +27,8 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     JButton pmans, phyrst, champs, madMex, den, cafe, player;
     int x = 1100;
     int y = 850;
-    pmansPanel pmansGame;
-    phyrstPanel phyrstGame;
+    //pmansPanel pmansGame;
+    //phyrstPanel phyrstGame;
     initialPanel initial;
 
 
@@ -44,6 +44,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     
    public void intersect() {
         
+       
         Rectangle r1 = new Rectangle(1450, 450, 100, 100);//pmans
         Rectangle r2 = new Rectangle(700, 500, 100, 100);//phyrst
         Rectangle r3 = new Rectangle(700, 400, 100, 100);//champs
@@ -53,18 +54,48 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         Rectangle play = player.getBounds();//player
         
         if (play.intersects(r1)) {
-            //System.out.println("congratz");
-            remove(initial.map);
-            add(pmansGame);
-            validate();
-            repaint();
+            initial.remove(initial.map);
+            initial.add(initial.pmansGame);
+            initial.validate();
+            initial.repaint();
+            initial.pmansGame.tim.start();
+        }
+        if (play.intersects(r2)) {
+            initial.remove(initial.map);
+            initial.add(initial.phyrstGame);
+            initial.validate();
+            initial.repaint();
+        }
+        if (play.intersects(r3)) {
+            initial.remove(initial.map);
+            initial.add(initial.champsGame);
+            initial.validate();
+            initial.repaint();
+        }
+        if (play.intersects(r4)) {
+            initial.remove(initial.map);
+            initial.add(initial.mexGame);
+            initial.validate();
+            initial.repaint();
+        }
+        if (play.intersects(r5)) {
+            initial.remove(initial.map);
+            initial.add(initial.denGame);
+            initial.validate();
+            initial.repaint();
+        }
+        if (play.intersects(r6)) {
+            initial.remove(initial.map);
+            initial.add(initial.cafeGame);
+            initial.validate();
+            initial.repaint();
         }
     }
 
-    public gameMapPanel(/*initialPanel a*/) {
+    public gameMapPanel(initialPanel a) {
         super();
         setLayout(null);
-        //initial = a;
+        initial = a;
         
         //intersect();
 
@@ -76,8 +107,8 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         cafe = new JButton("Cafe 210 West");
         player = new JButton();
         
-        pmansGame = new pmansPanel();
-        phyrstGame = new phyrstPanel();
+        //pmansGame = new pmansPanel();
+        //phyrstGame = new phyrstPanel();
 
         pmans.addActionListener(this);
         phyrst.addActionListener(this);

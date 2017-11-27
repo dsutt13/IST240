@@ -30,9 +30,8 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     //pmansPanel pmansGame;
     //phyrstPanel phyrstGame;
     initialPanel initial;
-
-
-
+    
+ 
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);

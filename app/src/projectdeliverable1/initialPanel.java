@@ -61,7 +61,7 @@ public class initialPanel extends JPanel implements ActionListener {
         ds = new gameDesigners();
         dp = new difficultyPanel();
 
-        pmansGame = new pmansPanel();
+        pmansGame = new pmansPanel(this);
         phyrstGame = new phyrstPanel();
         cafeGame = new cafePanel();
         mexGame = new mexPanel();

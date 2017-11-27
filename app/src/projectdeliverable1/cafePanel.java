@@ -56,7 +56,6 @@ public class cafePanel extends JPanel implements ActionListener {
         }
 
         if (i == 0) {
-            //System.out.println("hi");
             initial.remove(initial.cafeGame);
             initial.add(initial.map);
             initial.validate();

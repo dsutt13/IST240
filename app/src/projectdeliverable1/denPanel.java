@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package projectdeliverable1;
- 
+
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;

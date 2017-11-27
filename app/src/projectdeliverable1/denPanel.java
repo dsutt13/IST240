@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package projectdeliverable1;
-
+ 
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -22,7 +22,7 @@ public class denPanel extends JPanel {
         setLayout(null);
         setBackground(Color.orange);
         
-        welcome = new JButton("hello there");
+        welcome = new JButton("Welcome to the Lion's Den!");
         welcome.setBounds(1000,0,200,200);
         add(welcome);
     }

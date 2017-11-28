@@ -17,6 +17,7 @@ import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -25,8 +26,10 @@ import javax.swing.JPanel;
 public class gameMapPanel extends JPanel implements ActionListener, KeyListener {
 
     JButton pmans, phyrst, champs, madMex, den, cafe, player;
+    JTextArea totalScore;
     int x = 1100;
     int y = 850;
+    int score;
     initialPanel initial;
 
     Rectangle r1;//pmans
@@ -110,6 +113,10 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         den = new JButton("Lion's Den");
         cafe = new JButton("Cafe 210 West");
         player = new JButton();
+        
+        totalScore = new JTextArea("Total Score: " + score);
+        totalScore.setBounds(0,900,100,50);
+        add(totalScore);
         
         r1 = new Rectangle(1450, 450, 100, 100);//pmans
         r2 = new Rectangle(700, 500, 100, 100);//phyrst

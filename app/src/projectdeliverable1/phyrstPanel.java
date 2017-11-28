@@ -59,7 +59,7 @@ class phyrstPanel extends JPanel implements ActionListener {
             initial.add(initial.map);
             initial.validate();
             initial.repaint();
-            i = 6;
+            tim.stop();
         }
     }
 }

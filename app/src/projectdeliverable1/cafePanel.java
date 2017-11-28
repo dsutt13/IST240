@@ -8,6 +8,7 @@ package projectdeliverable1;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -19,13 +20,17 @@ import javax.swing.Timer;
  */
 public class cafePanel extends JPanel implements ActionListener {
 
-    JButton welcome;
+    JButton welcome, cup;
 
     Timer tim;
     JTextArea message = new JTextArea("Time: ");
+    JTextArea score = new JTextArea ("Score: ");
     int limit = 0;
     int delay = 0;
     int i = 6;
+    int n = 0;
+    int x = 0;
+    ImageIcon img;
     initialPanel initial;
     gameMapPanel map;
 
@@ -41,10 +46,24 @@ public class cafePanel extends JPanel implements ActionListener {
 
         add(message);
         message.setBounds(0, 0, 100, 50);
+        
+        add(score);
+        score.setBounds(0, 50, 100, 50);
+        
+        cup = new JButton();
+        add(cup);
+        cup.addActionListener(this);
+        cup.setBounds(n,x,100,100);
 
         delay = 1000;
         tim = new Timer(delay, this);
 
+        ImageIcon img = new ImageIcon("images/" + "cup" + ".jpg");
+        ImageIcon img2 = new ImageIcon(((img).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
+        cup.setText("");
+        cup.setIcon(img2);
+        
+        
     }
 
     @Override
@@ -61,6 +80,19 @@ public class cafePanel extends JPanel implements ActionListener {
             initial.validate();
             initial.repaint();
             tim.stop();
+        }
+        
+        if(obj == tim){
+               
+            int n = (int) (Math.random() * 1800) + 1;
+            int x = (int)(Math.random() * 800) + 1;
+            
+            cup.setBounds(n,x, 100, 100);
+        }
+        
+        if(obj ==  cup){
+            x = x+1;
+            score.setText("Score: " + x);
         }
     }
 

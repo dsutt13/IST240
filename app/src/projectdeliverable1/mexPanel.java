@@ -61,6 +61,7 @@ public class mexPanel extends JPanel implements ActionListener {
             initial.validate();
             initial.repaint();
             i = 6;
+            tim.stop();
         }
     }
     

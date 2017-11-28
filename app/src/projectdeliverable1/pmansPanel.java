@@ -53,7 +53,7 @@ class pmansPanel extends JPanel implements ActionListener {
         
         add(question);
         question.setBounds(250, 500, 300, 300);
-        
+       
         add(b1);
         b1.setBounds(400, 400, 50, 50);
         b1.setText("2");

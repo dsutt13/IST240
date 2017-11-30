@@ -21,8 +21,6 @@ import javax.swing.JPanel;
 public class initialPanel extends JPanel implements ActionListener {
 
     
-    
-    
     myJPanelstd mjp;
     instructionsPanel ip;
     selectcharacterPanel scp;

@@ -56,13 +56,13 @@ class pmansPanel extends JPanel implements ActionListener {
         question.setBounds(250, 500, 300, 300);
 
         add(b1);
-        b1.setBounds(400, 400, 50, 50);
+        b1.setBounds(600, 500, 50, 50);
         add(b2);
-        b2.setBounds(360, 360, 50, 50);
+        b2.setBounds(600, 575, 50, 50);
         add(b3);
-        b3.setBounds(320, 320, 50, 50);
+        b3.setBounds(600, 650, 50, 50);
         add(b4);
-        b4.setBounds(280, 280, 50, 50);
+        b4.setBounds(600, 725, 50, 50);
 
         delay = 1000;
         tim = new Timer(delay, this);
@@ -84,13 +84,13 @@ class pmansPanel extends JPanel implements ActionListener {
             System.out.print(wrongAnswer);
         }*/
 
-        if (i == 0) {
+       /* if (i == 0) {
             initial.remove(initial.pmansGame);
             initial.add(initial.map);
             initial.validate();
             initial.repaint();
             tim.stop();
-        }
+        }*/
 
     }
 

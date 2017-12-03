@@ -45,7 +45,7 @@ public class myJPanelstd extends JPanel {
 
         start = new JButton("Start");
         add(start);
-        start.setBounds(750, 800, 150, 50);
+        start.setBounds(925, 700, 150, 50);
 
         banner = new JButton("Bar Crawl");
         add(banner);
@@ -53,11 +53,11 @@ public class myJPanelstd extends JPanel {
 
         instructions = new JButton("Instructions");
         add(instructions);
-        instructions.setBounds(1050, 800, 150, 50);
+        instructions.setBounds(750, 800, 150, 50);
 
         designers = new JButton("Game Designers");
         add(designers);
-        designers.setBounds(1200, 800, 250, 50);
+        designers.setBounds(1100, 800, 150, 50);
 
     }
 

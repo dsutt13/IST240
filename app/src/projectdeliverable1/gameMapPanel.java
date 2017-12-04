@@ -29,7 +29,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     JTextArea totalScore;
     int x = 1100;
     int y = 850;
-    int score;
+    int totalScoreInt;
     initialPanel initial;
 
     Rectangle r1;//pmans
@@ -114,9 +114,11 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         cafe = new JButton("Cafe 210 West");
         player = new JButton();
         
-        totalScore = new JTextArea("Total Score: " + score);
-        totalScore.setBounds(0,900,100,50);
+        //totalScoreInt = (totalScoreInt + initial.cafeGame.scoreIntCafe);
+        totalScore = new JTextArea("Total Score: " + totalScoreInt);
+        totalScore.setBounds(0,900,110,50);
         add(totalScore);
+        //totalScoreInt = totalScoreInt + initial.cafeGame.scoreIntCafe;
         
         r1 = new Rectangle(1450, 450, 100, 100);//pmans
         r2 = new Rectangle(700, 500, 100, 100);//phyrst

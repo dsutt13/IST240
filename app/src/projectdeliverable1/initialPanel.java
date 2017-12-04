@@ -82,7 +82,12 @@ public class initialPanel extends JPanel implements ActionListener {
         dp.medium.addActionListener(this);
         dp.hard.addActionListener(this);
         //map.phyrst.addActionListener(this);
+        pmansGame.b1.addActionListener(this);
+        pmansGame.b2.addActionListener(this);
+        pmansGame.b3.addActionListener(this);
+        pmansGame.b4.addActionListener(this);
 
+        //map.totalScoreInt = (map.totalScoreInt + cafeGame.scoreIntCafe);
     }
 
     @Override
@@ -171,6 +176,9 @@ public class initialPanel extends JPanel implements ActionListener {
             validate();
             repaint();
         }
+        
+        //pmans
+        
 
     }
 

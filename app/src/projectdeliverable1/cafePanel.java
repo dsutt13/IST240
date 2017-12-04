@@ -24,10 +24,10 @@ public class cafePanel extends JPanel implements ActionListener {
 
     Timer tim;
     JTextArea message = new JTextArea("Time: ");
-    JTextArea score = new JTextArea ("Score: ");
+    JTextArea score = new JTextArea("Score: ");
     int limit = 0;
     int delay = 0;
-    int i = 6;
+    int i = 21;
     int n = 0;
     int scoreIntCafe;
     ImageIcon img;
@@ -46,32 +46,47 @@ public class cafePanel extends JPanel implements ActionListener {
 
         add(message);
         message.setBounds(0, 0, 100, 50);
-        
+
         add(score);
         score.setBounds(0, 50, 100, 50);
-        
+
         cup = new JButton();
         add(cup);
         cup.addActionListener(this);
-        cup.setBounds(n,scoreIntCafe,100,100);
+        cup.setBounds(n, scoreIntCafe, 100, 100);
 
         delay = 1000;
         tim = new Timer(delay, this);
-
+        
         ImageIcon img = new ImageIcon("images/" + "cup" + ".jpg");
         ImageIcon img2 = new ImageIcon(((img).getImage()).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH));
         cup.setText("");
         cup.setIcon(img2);
-        
-        
+
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object obj = ae.getSource();
         if (obj == tim) {
-            i = i - 1;
-            message.setText("Time: " + i);
+            if (initial.diff  == 1) {//easy
+                delay = 1000;
+                tim.setDelay(delay);
+                i = i - 1;
+                message.setText("Time: " + i);
+            }
+            if (initial.diff  == 2) {//medium
+                delay = 800;
+                tim.setDelay(delay);
+                i = i - 1;
+                message.setText("Time: " + i);
+            }
+            if (initial.diff  == 3) {//hard
+                delay = 600;
+                tim.setDelay(delay);
+                i = i - 1;
+                message.setText("Time: " + i);
+            }
         }
 
         if (i == 0) {
@@ -79,20 +94,22 @@ public class cafePanel extends JPanel implements ActionListener {
             initial.add(initial.map);
             initial.validate();
             initial.repaint();
+            initial.map.totalScore.setText("Score: " + initial.map.totalScoreInt);
             tim.stop();
         }
-        
-        if(obj == tim){
-               
+
+        if (obj == tim) {
+
             int n = (int) (Math.random() * 1800) + 1;
-            int x = (int)(Math.random() * 800) + 1;
-            
-            cup.setBounds(n,x, 100, 100);
+            int x = (int) (Math.random() * 800) + 1;
+
+            cup.setBounds(n, x, 100, 100);
         }
-        
-        if(obj ==  cup){
+
+        if (obj == cup) {
             scoreIntCafe = scoreIntCafe + 1;
-            score.setText("Score: " + scoreIntCafe);
+            initial.map.totalScoreInt++;
+            score.setText("Score: " + initial.map.totalScoreInt);
         }
     }
 

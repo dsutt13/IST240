@@ -31,7 +31,7 @@ public class instructionsPanel extends JPanel implements ActionListener {
     
     
     JTextArea message = new JTextArea("The instructions are as follows: \nWander around to your favorite State College bars "
-            + "and play fun games to try to earn as many points as possible!!");
+            + "and play fun games to try to earn as many points as possible!!  Then go home to Beaver Plaza!");
     JButton menu;
     
     public instructionsPanel(){

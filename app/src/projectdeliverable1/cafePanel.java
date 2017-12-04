@@ -29,7 +29,7 @@ public class cafePanel extends JPanel implements ActionListener {
     int delay = 0;
     int i = 6;
     int n = 0;
-    int x = 0;
+    int scoreIntCafe;
     ImageIcon img;
     initialPanel initial;
     gameMapPanel map;
@@ -53,7 +53,7 @@ public class cafePanel extends JPanel implements ActionListener {
         cup = new JButton();
         add(cup);
         cup.addActionListener(this);
-        cup.setBounds(n,x,100,100);
+        cup.setBounds(n,scoreIntCafe,100,100);
 
         delay = 1000;
         tim = new Timer(delay, this);
@@ -91,8 +91,8 @@ public class cafePanel extends JPanel implements ActionListener {
         }
         
         if(obj ==  cup){
-            x = x+1;
-            score.setText("Score: " + x);
+            scoreIntCafe = scoreIntCafe + 1;
+            score.setText("Score: " + scoreIntCafe);
         }
     }
 

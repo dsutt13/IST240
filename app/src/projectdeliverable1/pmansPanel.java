@@ -20,17 +20,17 @@ import javax.swing.Timer;
  */
 class pmansPanel extends JPanel implements ActionListener {
 
-    JButton welcome;
+    JButton welcome, wrong;
     JButton b1, b2, b3, b4;
 
     Timer tim;
     JTextArea message = new JTextArea("Time: ");
     JTextArea question = new JTextArea("How many championships have Penn State won?");
-    JTextArea wrongAnswer = new JTextArea("Wrong Answer!");
+    //JTextArea wrongAnswer = new JTextArea("Wrong Answer!");
     int limit = 0;
     int delay = 0;
     int i = 6;
-    int score = 0;
+    //int scoreIntPman = 0;
     initialPanel initial;
     gameMapPanel map;
 
@@ -54,6 +54,7 @@ class pmansPanel extends JPanel implements ActionListener {
 
         add(question);
         question.setBounds(250, 500, 300, 300);
+        
 
         add(b1);
         b1.setBounds(600, 500, 50, 50);
@@ -84,13 +85,13 @@ class pmansPanel extends JPanel implements ActionListener {
             System.out.print(wrongAnswer);
         }*/
 
-       /* if (i == 0) {
+        if (i == 0) {
             initial.remove(initial.pmansGame);
             initial.add(initial.map);
             initial.validate();
             initial.repaint();
             tim.stop();
-        }*/
+        }
 
     }
 

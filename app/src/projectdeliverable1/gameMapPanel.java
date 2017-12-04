@@ -106,6 +106,16 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
             initial.validate();
             initial.repaint();
             initial.fp.finalScore.setText("Your final score is: " + initial.map.totalScoreInt);
+            
+            XML_240 x = new XML_240();
+
+            x.openReaderXML("xxxx.xml");
+            int s = (Integer) x.ReadObject();
+            initial.fp.lastScore.setText("Youre last score was: " + s );
+            
+            x.openWriterXML("xxxx.xml");
+            x.writeObject(initial.map.totalScoreInt);
+            x.closeWriterXML();
         }
     }
 

@@ -25,7 +25,7 @@ import javax.swing.JTextArea;
  */
 public class gameMapPanel extends JPanel implements ActionListener, KeyListener {
 
-    JButton pmans, phyrst, champs, madMex, den, cafe, player;
+    JButton pmans, phyrst, champs, madMex, den, cafe, player, home;
     JTextArea totalScore;
     int x = 1100;
     int y = 850;
@@ -39,6 +39,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
     Rectangle r5;//den
     Rectangle r6;//cafe
     Rectangle play;//player
+    Rectangle homeRect;//home
 
     public void paintComponent(Graphics g) {
 
@@ -99,6 +100,12 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
             initial.cafeGame.tim.start();
             r6.setBounds(2000, 2000, 100, 100);
         }
+        if (play.intersects(homeRect)) {
+            initial.remove(initial.map);
+            initial.add(initial.fp);
+            initial.validate();
+            initial.repaint();
+        }
     }
 
     public gameMapPanel(initialPanel a) {
@@ -113,12 +120,11 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         den = new JButton("Lion's Den");
         cafe = new JButton("Cafe 210 West");
         player = new JButton();
+        home = new JButton("Home!");
         
-        //totalScoreInt = (totalScoreInt + initial.cafeGame.scoreIntCafe);
         totalScore = new JTextArea("Total Score: " + totalScoreInt);
         totalScore.setBounds(0,900,110,50);
         add(totalScore);
-        //totalScoreInt = totalScoreInt + initial.cafeGame.scoreIntCafe;
         
         r1 = new Rectangle(1450, 450, 100, 100);//pmans
         r2 = new Rectangle(700, 500, 100, 100);//phyrst
@@ -126,6 +132,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         r4 = new Rectangle(800, 850, 100, 100);//madMex
         r5 = new Rectangle(1650, 200, 100, 100);//den
         r6 = new Rectangle(150, 150, 100, 100);//cafe
+        homeRect = new Rectangle(75,650,100,100);//home
 
         pmans.addActionListener(this);
         phyrst.addActionListener(this);
@@ -134,6 +141,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         den.addActionListener(this);
         cafe.addActionListener(this);
         player.addActionListener(this);
+        home.addActionListener(this);
 
         pmans.setBounds(1450, 450, 100, 100);
         phyrst.setBounds(700, 500, 100, 100);
@@ -142,6 +150,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         den.setBounds(1650, 200, 100, 100);
         cafe.setBounds(150, 150, 100, 100);
         player.setBounds(x, y, 75, 75);
+        home.setBounds(75,650,100,100);
 
         add(pmans);
         add(phyrst);
@@ -150,6 +159,7 @@ public class gameMapPanel extends JPanel implements ActionListener, KeyListener 
         add(den);
         add(cafe);
         add(player);
+        add(home);
 
         setFocusable(true);
         addKeyListener(this);

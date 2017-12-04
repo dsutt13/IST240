@@ -27,6 +27,7 @@ public class initialPanel extends JPanel implements ActionListener {
     gameMapPanel map;
     gameDesigners ds;
     difficultyPanel dp;
+    finalPanel fp;
     
     JButton player;
     
@@ -37,7 +38,7 @@ public class initialPanel extends JPanel implements ActionListener {
     champsPanel champsGame;
     denPanel denGame;
         
-        
+    int diff = 0;
     
     ImageIcon originalSize = new ImageIcon("images/map.jpg");
     ImageIcon newSize = new ImageIcon(((originalSize).getImage()).getScaledInstance(2000, 1000, java.awt.Image.SCALE_SMOOTH));
@@ -58,7 +59,8 @@ public class initialPanel extends JPanel implements ActionListener {
         map = new gameMapPanel(this);
         ds = new gameDesigners();
         dp = new difficultyPanel();
-
+        fp = new finalPanel(this);
+        
         pmansGame = new pmansPanel(this);
         phyrstGame = new phyrstPanel(this);
         cafeGame = new cafePanel(this);
@@ -81,12 +83,12 @@ public class initialPanel extends JPanel implements ActionListener {
         dp.easy.addActionListener(this);
         dp.medium.addActionListener(this);
         dp.hard.addActionListener(this);
-        //map.phyrst.addActionListener(this);
-        pmansGame.b1.addActionListener(this);
+
+        /*pmansGame.b1.addActionListener(this);
         pmansGame.b2.addActionListener(this);
         pmansGame.b3.addActionListener(this);
         pmansGame.b4.addActionListener(this);
-
+        */
         //map.totalScoreInt = (map.totalScoreInt + cafeGame.scoreIntCafe);
     }
 
@@ -141,6 +143,8 @@ public class initialPanel extends JPanel implements ActionListener {
             validate();
             repaint();
             map.player.setIcon(harry1);
+            denGame.player.setIcon(harry1);
+            mexGame.player.setIcon(harry1);
         }
         if(obj == scp.character2) {
             remove(scp);
@@ -148,6 +152,8 @@ public class initialPanel extends JPanel implements ActionListener {
             validate();
             repaint();
             map.player.setIcon(kingSnow1);
+            denGame.player.setIcon(kingSnow1);
+            mexGame.player.setIcon(kingSnow1);
         }
         if(obj == scp.character3) { 
             remove(scp);
@@ -155,22 +161,27 @@ public class initialPanel extends JPanel implements ActionListener {
             validate();
             repaint();
             map.player.setIcon(myers1);
+            denGame.player.setIcon(myers1);
+            mexGame.player.setIcon(myers1);
         }
         
         //selecting difficulty
-        if(obj == dp.easy) { 
+        if(obj == dp.easy) {
+            diff = 1;
             remove(dp);
             add(map);
             validate();
             repaint();
         }
-        if(obj == dp.medium) { 
+        if(obj == dp.medium) {
+            diff = 2;
             remove(dp);
             add(map);
             validate();
             repaint();
         }
         if(obj == dp.hard) { 
+            diff = 3;
             remove(dp);
             add(map);
             validate();
